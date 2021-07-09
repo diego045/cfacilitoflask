@@ -12,7 +12,7 @@ csrf = CSRFProtect(app)
 
 @app.route('/')
 def saludo():
-    custome_cookie = request.cookies.get('custom_cookie', 'Undefinded')
+    custome_cookie = request.cookies.get('custome_cookie', 'Undefinded')
     print(custome_cookie)
     return "hey!"
 
@@ -46,6 +46,7 @@ def try1():
 
     return render_template('try.html', form = comment_form)
 
+#v16 info de cookies en cookie.html
 @app.route('/cookie')
 def cookie():
     response = make_response( render_template('cookie.html') )

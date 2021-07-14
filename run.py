@@ -38,6 +38,8 @@ def params():
 def validarruta(columna = 'valor por default', id = ''):
     return f'el parametro es {columna}, {id}'
 
+#Un template o plantilla es una herramienta muy útil para separar el diseño web de la programación de las funcionalidades de la página web.
+#El poder de usas templates en un desarrollo web tiene la ventaja de separar las funciones: diseño y programación
 #en render template se le da como primer parametro el template que va a renderizar, flask trabaja con jinja2 para renderizar templates
 #no se da la ruta de tmplates/index... por default se sabe donde esta los templates en caso de que la carpeta cambie de nombre en app template folder
 @app.route('/template')

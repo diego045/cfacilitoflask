@@ -38,6 +38,8 @@ def params():
 def validarruta(columna = 'valor por default', id = ''):
     return f'el parametro es {columna}, {id}'
 
+#en render template se le da como primer parametro el template que va a renderizar, flask trabaja con jinja2 para renderizar templates
+#no se da la ruta de tmplates/index... por default se sabe donde esta los templates en caso de que la carpeta cambie de nombre en app template folder
 @app.route('/template')
 def index():
     return render_template('index.html')

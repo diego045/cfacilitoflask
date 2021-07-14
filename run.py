@@ -22,6 +22,9 @@ def params():
     param2 = request.args.get('param2')
     return f'tus parametros son : {param1},{param2}'
 
+#Podemos conocer el orden de nuestra url por ejemplo traer algo de una bd tomando como registros los parametros
+#el parametro conocido se pone entre diamantes(porque?) de esta manera se pueden manejar mas rutas y hacerlas mas concretas
+#tambien se asigna valoders por default a las rutas sin param y se puede validar el tipo de los params ejemplo <int:id>
 @app.route('/validarruta/')
 @app.route('/validarruta/<columna>/')
 @app.route('/validarruta/<columna>/<int:id>')

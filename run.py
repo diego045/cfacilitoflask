@@ -16,10 +16,13 @@ csrf = CSRFProtect(app)
 
 @app.route('/')
 def saludo():
+    #recepcion de cookie
     custome_cookie = request.cookies.get('custome_cookie', 'Undefinded')
     print(custome_cookie)
     return "hey!"
 
+#No se pueden repetir metodos en rutas(puebalo;), podemos recibir parametros de diferentes tipos vienen en la direccion url despues de
+# ?<nombreparametro> = <valor> con & concatenas parametros indefinidamente 
 @app.route('/params')
 def params():
     param1 = request.args.get('param1')

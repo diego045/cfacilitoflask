@@ -5,17 +5,24 @@ import forms
 from flask_wtf.csrf import CSRFProtect 
 from flask import make_response
 
+#Primer argumento el nombre del módulo o paquete de la aplicación. Para estar seguros de ello, utilizaremos la palabra reservada name.
+#Esto es necesario para que Flask sepa, por ejemplo, donde encontrar las plantillas de nuestra aplicación o los ficheros estáticos.
 app = Flask(__name__)
+
+
 app.secret_key = 'my_secret_key'
 
 csrf = CSRFProtect(app)
 
 @app.route('/')
 def saludo():
+    #recepcion de cookie
     custome_cookie = request.cookies.get('custome_cookie', 'Undefinded')
     print(custome_cookie)
     return "hey!"
 
+#No se pueden repetir metodos en rutas(puebalo;), podemos recibir parametros de diferentes tipos vienen en la direccion url despues de
+# ?<nombreparametro> = <valor> con & concatenas parametros indefinidamente 
 @app.route('/params')
 def params():
     param1 = request.args.get('param1')
@@ -57,4 +64,5 @@ def cookie():
     return response
 
 if __name__ == "__main__":
+    #metodo run levanta nuestro servidor por default en el puerto 5000 cambio con port 
     app.run(debug = True )

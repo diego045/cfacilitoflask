@@ -2,7 +2,9 @@
 
 {% block content %}
         <h3>Primer html</h3>
+        <!--los tags o variables se escriben en doble llave{{ejemplo}}-->
         <h6>{{tagh}}</h6>
+        <!--para los ciclos seusa {%ciclo%}  y siempre sse cierra un ciclo con endciclo -->
         {% for item in list%}
             <p>{{item}}</p>
         {% endfor %}

@@ -46,6 +46,7 @@ def validarruta(columna = 'valor por default', id = ''):
 def index():
     return render_template('index.html')
 
+#mandamos variables a nuestro template como argumentos en render template 
 @app.route('/template/<tag>')
 def tag(tag= 'vf'):
     my_list= [1,2,3]
